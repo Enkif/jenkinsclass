@@ -1,5 +1,10 @@
 docker build -t my-jenkins .
+docker image ls
 docker run -d --name jenkins \
   -p 8080:8080 -p 50000:50000 \
   -v jenkins_home:/var/jenkins_home \
-  my-jenkins
+  my-jenkins-lts
+  docker container ls
+docker exec -it 9e5c4e2e2005 sh -c 'cat /var/jenkins_home/secrets/initialAdminPassword'
+
+Paste password in browser to access Jenkins dashboard. Then, install suggested plugins and create admin user. After that, you can start using Jenkins for your CI/CD pipelines.
