@@ -1,5 +1,5 @@
 #!/bin/bash
-ls -l
+ls * 2>/dev/null || echo "No existing ${TOTAL_FILE} found, will create new one."
 
 # Array of machine names
 mapfile -t MACHINES < ./data/machines.txt
