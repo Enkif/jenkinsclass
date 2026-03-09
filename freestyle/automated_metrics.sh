@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Array of machine names (edit this list)
-mapfile -t MACHINES < ../data/machines.txt
+mapfile -t MACHINES < ./data/machines.txt
 
 
 # Local source file
