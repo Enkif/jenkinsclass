@@ -36,4 +36,3 @@ ls -l ./*${SRC_FILE}
 echo "All metrics collected into ${TOTAL_FILE}"
 echo "Contents of ${TOTAL_FILE}:"
 cat "${TOTAL_FILE}"
-find . ! -name 'all_metrics.csv' -delete
