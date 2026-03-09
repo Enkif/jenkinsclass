@@ -20,8 +20,8 @@ ls -l ./*${SRC_FILE}  # List existing metrics files for reference
 for machine in "${MACHINES[@]}"; do
     RANDOM_NUM=$((1 + RANDOM % 1000))  # Generate random number for demo
     echo "Fetching $SRC_FILE from $machine..."
-    touch "./${machine}_${DATE_TIME}_${SRC_FILE}"  # Create empty file to simulate scp
-    echo  "${machine},${DATE},${RANDOM_NUM}" >>"./${machine}_${DATE_TIME}_${SRC_FILE}"  # Simulate fetching file (replace with actual scp command)
+    #touch "./${machine}_${DATE_TIME}_${SRC_FILE}"  # Create empty file to simulate scp
+    echo  "${machine},${DATE},${RANDOM_NUM}" >"./${machine}_${DATE_TIME}_${SRC_FILE}"  # Simulate fetching file (replace with actual scp command)
     status=$?
     if [ $status -eq 0 ]; then
         echo "✓ Success from $machine"
