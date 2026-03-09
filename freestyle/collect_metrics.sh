@@ -1,5 +1,14 @@
 #!/bin/bash
 
+# Collect per-machine metrics and aggregate all rows into all_metrics.csv.
+#
+# Usage:
+#   Run this script from the repository root.
+#
+# Notes:
+# - Machine names are currently hardcoded in MACHINES.
+# - Data collection is simulated; swap in real remote copy logic as needed.
+
 # Array of machine names (edit this list)
 MACHINES=("robot-123e4567-e89b-12d3-a456-426614174000" "robot-550e8400-e29b-41d4-a716-446655440000" "robot-6ba7b810-9dad-11d1-80b4-00c04fd430c8")
 
@@ -15,7 +24,7 @@ echo "Build URL: $BUILD_URL"
 echo "Timestamp: $DATE_TIME"
 
 ls -l ./*${SRC_FILE}  # List existing metrics files for reference
-# Loop: SCP from each machine to local
+# Loop through each machine and merge each local file into TOTAL_FILE.
 for machine in "${MACHINES[@]}"; do
     RANDOM_NUM=$((1 + RANDOM % 1000))  # Generate random number for demo
     echo "Fetching $SRC_FILE from $machine..."
