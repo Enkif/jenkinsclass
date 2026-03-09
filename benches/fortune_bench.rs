@@ -57,14 +57,14 @@ fn bench_print_fortune(c: &mut Criterion) {
 fn bench_parse_name_from_args(c: &mut Criterion) {
     let mut group = c.benchmark_group("parse_name_from_args");
 
-    group.bench_with_input(BenchmarkId::new("with_name", "short"), &(), |b, _| {
+    group.bench_with_input(BenchmarkId::new("with_name", "short"), &(), |b, ()| {
         b.iter(|| black_box(parse_name_from_args(["--name", "Avery"])));
     });
 
     group.bench_with_input(
         BenchmarkId::new("without_name", "flags_only"),
         &(),
-        |b, _| {
+        |b, ()| {
             b.iter(|| black_box(parse_name_from_args(["--list", "--seed", "7"])));
         },
     );
