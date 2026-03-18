@@ -57,8 +57,6 @@ EXPOSE 8080 50000
 # Run Jenkins as non-root for normal operation.
 USER jenkins
 
-# Preinstall Docker plugin at image build time for faster first boot.
-RUN jenkins-plugin-cli --plugins docker-plugin
 
 # Jenkins entrypoint is already defined in the base image
 # So we just inherit it; no CMD or ENTRYPOINT needed.
