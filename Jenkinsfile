@@ -23,7 +23,7 @@ pipeline {
                         curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y --profile minimal
                     fi
                     . "$HOME/.cargo/env"
-                    rustup component add clippy
+                    rustup component add clippy rustfmt
                     cargo --version
                     rustc --version
                 '''
