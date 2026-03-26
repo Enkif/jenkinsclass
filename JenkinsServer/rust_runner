@@ -50,3 +50,7 @@ RUN rm -rf /var/lib/apt/lists/*
 # Run agent as non-root for normal operation.
 USER jenkins
 
+
+RUN rustup component add rustfmt
+RUN rustup component add clippy
+

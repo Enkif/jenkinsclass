@@ -42,6 +42,8 @@ RUN apt-get update && apt-get install -y \
     git \
     cargo
 
+
+
 # Ensure the `jenkins` user can access the Docker socket when mounted from host.
 RUN groupadd -f docker && usermod -aG docker jenkins
 
@@ -56,6 +58,10 @@ EXPOSE 8080 50000
 
 # Run Jenkins as non-root for normal operation.
 USER jenkins
+
+RUN rustup component add rustfmt
+RUN rustup component add clippy
+
 
 
 # Jenkins entrypoint is already defined in the base image
