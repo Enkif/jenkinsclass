@@ -59,10 +59,6 @@ EXPOSE 8080 50000
 # Run Jenkins as non-root for normal operation.
 USER jenkins
 
-RUN rustup component add rustfmt
-RUN rustup component add clippy
-
-
 
 # Jenkins entrypoint is already defined in the base image
 # So we just inherit it; no CMD or ENTRYPOINT needed.

@@ -51,6 +51,5 @@ RUN rm -rf /var/lib/apt/lists/*
 USER jenkins
 
 
-RUN rustup component add rustfmt
-RUN rustup component add clippy
+
 
